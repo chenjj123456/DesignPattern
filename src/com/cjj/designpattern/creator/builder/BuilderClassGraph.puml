@@ -1,0 +1,44 @@
+@startuml
+
+class Builder{
+makeTitle()
+makeString()
+makeItems()
+close()
+}
+
+class TextBuilder{
+private buffer
+makeTitle()
+makeString()
+makeItems()
+close()
+getResult()
+}
+
+class HTMLBuilder{
+private filename
+private writer
+makeTitle()
+makeString()
+makeItems()
+close()
+getResult()
+}
+
+class Director{
+private Builder builder
+construct()
+}
+
+class Main{
+
+}
+
+TextBuilder --|>Builder
+HTMLBuilder --|>Builder
+Director o->Builder
+Main -->TextBuilder:Uses >
+Main -->HTMLBuilder:Uses >
+Main -->Director:Uses >
+@enduml

@@ -1,0 +1,48 @@
+@startuml
+
+interface Command{
+execute()
+}
+
+class MacroCommand{
+commands
+execute()
+append()
+undo()
+clear()
+}
+
+class DrawCommand{
+drawable
+position
+exexute()
+}
+
+interface Drawable{
+draw()
+}
+
+class DrawCanvas{
+history
+color
+radius
+draw()
+paint()
+}
+
+class Main{
+history()
+canvas()
+clearButton()
+}
+
+MacroCommand ..|>Command
+MacroCommand o->Command
+DrawCommand ..|>Command
+DrawCommand o->Drawable
+DrawCanvas ..|>Drawable
+DrawCanvas o->MacroCommand
+Main o->DrawCanvas
+Main o->MacroCommand
+
+@enduml

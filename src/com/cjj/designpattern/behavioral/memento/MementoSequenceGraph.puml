@@ -1,0 +1,16 @@
+@startuml
+activate Main
+Main ->Gamer:createMemento
+activate Gamer
+Gamer ->Memento:new
+activate Memento
+Memento -->Gamer
+deactivate Memento
+Gamer -->Main
+deactivate Gamer
+Main ->Gamer:restoreMemento
+activate Gamer
+Gamer -->Main
+deactivate Gamer
+
+@enduml

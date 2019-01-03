@@ -1,0 +1,32 @@
+@startuml
+
+class Manager{
+showcase
+register()
+create()
+}
+
+interface Product{
+use()
+createClone()
+}
+
+class UnderlinePen{
+private ulchar
+
+use()
+createClone()
+}
+
+class MessageBox{
+private decochar
+use()
+createClone()
+
+}
+
+Manager ->Product:Uses >
+UnderlinePen ..|>Product
+MessageBox ..|>Product
+
+@enduml

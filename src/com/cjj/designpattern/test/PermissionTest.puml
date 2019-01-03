@@ -1,0 +1,15 @@
+@startuml
+
+class Something{
+private int privateField;
+protected int protectedField;
+public int publicField;
+int packageField;
+private void peivateMethod(){}
+protected void protectedMethod(){}
+public void publicMethod(){}
+void packageMethod(){}
+
+}
+
+@enduml

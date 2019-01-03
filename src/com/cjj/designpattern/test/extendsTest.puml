@@ -1,0 +1,65 @@
+@startuml
+
+'继承抽象类
+abstract class ParentClass{
+int field1;
+static char field2;
+abstract void methodA();
+double methodB()
+}
+class ChildClass{
+void methodA();
+static void methodC();
+}
+
+ParentClass<|--ChildClass
+
+'实现接口
+interface Printable{
+abstrcat void print();
+abstract void newPage();
+}
+
+class PrintClass implements Printable{
+void print();
+void newPage();
+}
+
+'聚合
+class Color{
+
+}
+
+class Fruit{
+Color color;
+}
+
+class Basket{
+Fruit[] fruits;
+}
+'abstract class AbstractList
+'abstract AbstractCollection
+'interface List
+'interface Collection
+'
+'List <|-- AbstractList
+'Collection <|-- AbstractCollection
+'
+'Collection <|- List
+'AbstractCollection <|- AbstractList
+'AbstractList <|-- ArrayList
+'
+'class ArrayList {
+'Object[] elementData
+'size()
+'}
+'
+'enum TimeUnit {
+'DAYS
+'HOURS
+'MINUTES
+'}
+
+
+
+@enduml

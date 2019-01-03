@@ -1,0 +1,50 @@
+@startuml
+actor 用户
+
+用户 ->用户:登陆
+note over 用户:登陆成功
+
+activate Client
+用户->Client:work
+
+Client ->Client:check
+note over of Client:check success
+
+activate Server
+Client -[#green]> Server:open
+Server --[#green]> Client
+deactivate Server
+
+Client -[#red]> Server:print
+activate Server
+
+Server-[#orange]>Device:write
+activate Device
+Device --[#orange]>Server
+deactivate Device
+Server --[#red]>Client:
+deactivate Server
+
+
+Client -[#green]>Server:close
+activate Server
+Server --[#green]>Client
+deactivate Server
+
+Client -->用户
+deactivate Client
+
+
+
+'Alice -> Bob: Authentication Request
+'Bob --> Alice: Authentication Response
+'
+'Alice -> Bob: Another authentication Request
+'Alice <-- Bob: another authentication Response
+'actor user #blue
+'participant user2 #grey
+'boundary 边界 #blue
+'control 控制 #green
+'entity 实体 #pink
+'database 数据库 #yellow
+@enduml

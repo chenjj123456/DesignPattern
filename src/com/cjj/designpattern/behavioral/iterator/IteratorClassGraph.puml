@@ -1,0 +1,40 @@
+@startuml
+
+interface Aggregate{
+iterator()
+}
+
+interface Iterator{
+hasNext()
+next()
+}
+
+class BookShelf{
+private books
+private last
+
+getBookAt()
+appendBook()
+getLength()
+iterator()
+}
+
+class BookShelfIterator{
+private bookShelf
+private index
+hasNext()
+next()
+}
+
+class Book{
+private name
+getName()
+}
+
+Aggregate ->Iterator:create >
+BookShelf ..|>Aggregate
+BookShelfIterator ..|>Iterator
+BookShelf <-o BookShelfIterator
+Book <-o BookShelf
+
+@enduml

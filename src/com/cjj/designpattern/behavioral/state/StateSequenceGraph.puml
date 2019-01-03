@@ -1,0 +1,39 @@
+@startuml
+
+activate Main
+activate awt
+awt ->SafeFrame:actionPerformed
+activate SafeFrame
+SafeFrame ->DayState:doUse
+activate DayState
+DayState -->SafeFrame
+deactivate DayState
+SafeFrame -->awt
+deactivate SafeFrame
+deactivate awt
+
+Main ->SafeFrame:setClock
+activate SafeFrame
+SafeFrame ->DayState:doClock
+activate DayState
+DayState ->SafeFrame:changeState
+activate SafeFrame
+SafeFrame -->DayState
+deactivate SafeFrame
+DayState -->SafeFrame
+SafeFrame -->Main
+deactivate SafeFrame
+
+activate awt
+awt ->SafeFrame:actionPerformed
+activate SafeFrame
+SafeFrame ->NightState:doUse
+activate NightState
+NightState -->SafeFrame
+deactivate NightState
+SafeFrame -->awt
+deactivate SafeFrame
+deactivate awt
+
+
+@enduml

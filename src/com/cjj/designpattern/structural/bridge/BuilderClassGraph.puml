@@ -1,0 +1,26 @@
+@startuml
+class Display{
+DisplayImpl impl
+open()
+print()
+close()
+display()
+}
+
+class DisplayImpl{
+rawOpen()
+rawPrint()
+rawClose()
+}
+
+class CountDisplay{
+multiDisplay()
+}
+
+class StringDisplayImpl{
+rawOpen()
+rawPrint()
+rawClose()
+}
+
+@enduml

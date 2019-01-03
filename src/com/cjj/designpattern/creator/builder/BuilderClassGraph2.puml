@@ -1,0 +1,30 @@
+@startuml
+
+class Builder{
+buildPart1()
+buildPart2()
+buildPart3()
+}
+
+class CreateBuilder{
+buildPart1()
+buildPart2()
+buildPart3()
+getResult()
+}
+
+class Director{
+private Builder builder
+construct()
+}
+
+class Client{
+}
+CreateBuilder --|>Builder
+Client -->Director:Uses >
+Client -->CreateBuilder:Uses >
+Director o->Builder
+
+
+
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+
+class Main{
+
+}
+
+class PageMaker{
+makeWelcome()
+}
+
+class HtmlWriter{
+writer
+title()
+paragraph()
+link()
+mailto()
+close()
+}
+
+class Database{
+getProperies()
+}
+
+Main ->PageMaker:Uses >
+PageMaker ->HtmlWriter:Uses >
+PageMaker ->Database:Uses >
+@enduml

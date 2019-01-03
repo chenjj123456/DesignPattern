@@ -1,0 +1,30 @@
+@startuml
+activate Main
+Main ->PrinterProxy:new
+Main ->PrinterProxy:getPrinterName
+activate PrinterProxy
+PrinterProxy -->Main
+deactivate PrinterProxy
+
+Main ->PrinterProxy:setPrintrtName
+activate PrinterProxy
+PrinterProxy -->Main
+deactivate PrinterProxy
+
+Main ->PrinterProxy:getPrinterName
+activate PrinterProxy
+PrinterProxy -->Main
+deactivate PrinterProxy
+
+Main ->PrinterProxy:print
+activate PrinterProxy
+PrinterProxy ->Printer:new
+PrinterProxy ->Printer:print
+activate Printer
+Printer -->PrinterProxy
+deactivate Printer
+PrinterProxy -->Main
+deactivate PrinterProxy
+
+
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+
+class Singleton{
+private Singleton singleton
+
+private Singleton()
+public getInstance()
+}
+
+@enduml
